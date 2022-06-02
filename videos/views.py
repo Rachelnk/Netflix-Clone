@@ -4,6 +4,9 @@ import requests
 
 # Create your views here.
 
+def all_movies_tvshows(request):
+  return render(request, 'all-movies/home.html')
+
 def view_all(request):
 
   # get now playing movies
@@ -12,15 +15,9 @@ def view_all(request):
   now_playing_movies = now_playing_movies_result['results']
 
   # get popular tv shows
-  popular_tv_shows_request = requests.get("https://api.themoviedb.org/3/tv/popular_tv?api_key=" + TMDB_API_KEY)
+  popular_tv_shows_request = requests.get("https://api.themoviedb.org/3/tv/popular?api_key=" + TMDB_API_KEY)
   popular_tv_shows_result = popular_tv_shows_request.json()
-  popular_tv_shows = popular_tv_shows_result['results']
-
-  # get popular movies
-  popular_movies_request = requests.get("https://api.themoviedb.org/3/tv/popular_tv?api_key=" + TMDB_API_KEY)
-  popular_movies_result = popular_tv_shows_request.json()
-  popular_movies = popular_movies_result['results']
-
+  popular_tv_shows = popular_tv_shows_result['results']  
 
   # get top rated tv shows
   top_rated_tv_request = requests.get("https://api.themoviedb.org/3/tv/top_rated?api_key=" + TMDB_API_KEY)
@@ -33,11 +30,14 @@ def view_all(request):
   top_rated_movie = top_rated_tv_result['results']
 
   # get upcoming movies
-  upcoming_movie_request = requests.get("https://api.themoviedb.org/3/movie/upcoming_movie?api_key=" + TMDB_API_KEY)
+  upcoming_movie_request = requests.get("https://api.themoviedb.org/3/movie/upcoming?api_key=" + TMDB_API_KEY)
   upcoming_movie_results = upcoming_movie_request.json()
   upcoming_movies = upcoming_movie_results['results']
 
-  return render(request,'all-movies-tvs.html', {'now_playing_movies': now_playing_movies, 'top_rated_movie': top_rated_movie, 'top_rated_tv':top_rated_tv, 'upcoming_movies': upcoming_movies, 'popular_movies':popular_movies})
+  return render(request,'all-movies/home.html', {'now_playing_movies': now_playing_movies, 'top_rated_movie': top_rated_movie, 'top_rated_tv':top_rated_tv, 'upcoming_movies': upcoming_movies, 'popular_tv_shows':popular_tv_shows})
+
+def load_navbar(request):
+  return render (request,'navbar.html')
 
   
 

@@ -1,0 +1,110 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+  <h1 class="text-center">Trending Now</h1>
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 movie-card">
+
+      {% for playing_now in now_playing_movies|slice:":4" %}
+   
+    <div>
+      <a href="">
+        <img src="https://image.tmdb.org/t/p/w500/{{playing_now.poster_path}}" alt="">
+        <li class="text-center">
+          {{ playing_now.title|truncatechars:10 }}
+      </li>      
+    </a>
+    </div>
+    {% endfor %}
+    </div>
+    
+  </div>
+</div>
+
+<div class="container">
+  <h1>Top Rated Movies</h1>
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 movie-card">
+    {% for top_rated_movie in top_rated_movie %}
+    <li class="text-center">
+      {{ .title|truncatechars:10}}
+  </li>
+   
+    <div>
+      <a href="">
+        <img src="https://image.tmdb.org/t/p/w500/{{now_playing_movies.poster_path}}" alt="">
+        <li class="text-center">
+          {{ now_playing_movies.title|truncatechars:10}}
+      </li>
+      
+    </a>
+    </div>
+    {% endfor %}
+  </div>
+  </div>
+</div>
+
+<div class="container">
+  <h1>Top Rated TV shows</h1>
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 movie-card">
+    {% for top_rated in top_rated_tv %}  
+   
+    <div>
+      <a href="">
+        <img src="https://image.tmdb.org/t/p/w500/{{top_rated.poster_path}}" alt="">
+        <li class="text-center">
+          {{ top_rated.title|truncatechars:10}}
+      </li>
+      
+    </a>
+    </div>
+    {% endfor %}
+  </div>
+  </div>
+</div>
+
+<!-- upcoming_movies -->
+
+<div class="container">
+  <h1>Upcoming Movies</h1>
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 movie-card">
+    {% for upcoming_movies in upcoming_movies %}   
+   
+    <div>
+      <a href="">
+        <img src="https://image.tmdb.org/t/p/w500/{{upcoming_movies.poster_path}}" alt="">
+        <li class="text-center">
+          {{ upcoming_movies.title|truncatechars:10}}
+      </li>
+      
+    </a>
+    </div>
+    {% endfor %}
+  </div>
+  </div>
+</div>
+
+<!-- popular_tv_shows -->
+<div class="container-fluid">
+  <h1>Must Watch Shows</h1>
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 movie-card">
+    {% for popular_tv_shows in popular_tv_shows %}
+   
+    <div>
+      <a href="">
+        <img src="https://image.tmdb.org/t/p/w500/{{popular_tv_shows.poster_path}}" alt="">
+        <li class="text-center">
+          {{ popular_tv_shows.title|truncatechars:10}}
+      </li>
+      
+    </a>
+    </div>
+    {% endfor %}
+  </div>
+  </div>
+</div>
+{%endblock%}
