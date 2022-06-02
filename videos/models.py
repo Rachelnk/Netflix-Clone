@@ -4,3 +4,4 @@ from django.db import models
 class UserRegistration(models.Model):
     name = models.CharField(max_length = 30)
     email = models.EmailField()
+    profile_pic = models.ImageField(upload_to = 'profile/')
