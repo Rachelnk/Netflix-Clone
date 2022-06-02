@@ -7,8 +7,20 @@ body {
 
 #movie-cont {
   display: flex;
-  overflow-y: hidden;
-  overflow-x: scroll;
+  object-fit: contain;
+  /* overflow-y: hidden;
+  overflow-x: scroll; */
   padding: 24px;
 
+}
+.img-cont{
+  padding: 24px;
+ 
+}
+.img-thumbnail {
+  /* background-color: #000000; */
+  border: 1px solid #000000;
+  /* border-radius: 0.25rem; */
+  max-width: 500px;
+  height: 500px;
 }
