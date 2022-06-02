@@ -36,8 +36,6 @@ def view_all(request):
 
   return render(request,'all-movies/home.html', {'now_playing_movies': now_playing_movies, 'top_rated_movie': top_rated_movie, 'top_rated_tv':top_rated_tv, 'upcoming_movies': upcoming_movies, 'popular_tv_shows':popular_tv_shows})
 
-def load_navbar(request):
-  return render (request,'navbar.html')
 
   
 

@@ -1,0 +1,14 @@
+body {
+  background-color: black;
+}
+#category-title {
+  color: white;
+}
+
+#movie-cont {
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  padding: 24px;
+
+}

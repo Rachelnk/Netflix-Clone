@@ -1,10 +1,14 @@
 
 {% extends 'base.html' %}
+
+{% load static %}
+
 {% block content %}
-<div class="container">
-  <h1 class="text-center">Trending Now</h1>
+
+  <h1 class="text-center" id= "category-title">Trending Now</h1>
+  <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 movie-card">
+    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-2 d-flex movie-card">
 
       {% for playing_now in now_playing_movies|slice:":4" %}
    
@@ -21,21 +25,20 @@
     
   </div>
 </div>
+</div>
 
-<div class="container">
-  <h1>Top Rated Movies</h1>
+
+  <h1 class="text-center" id= "category-title">Top Rated Movies</h1>
+  <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 movie-card">
+    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-2 d-flex movie-card" id = "movie-cont">
     {% for top_rated_movie in top_rated_movie %}
-    <li class="text-center">
-      {{ .title|truncatechars:10}}
-  </li>
-   
+       
     <div>
-      <a href="">
-        <img src="https://image.tmdb.org/t/p/w500/{{now_playing_movies.poster_path}}" alt="">
+      <a href="">        
+        <img src="https://image.tmdb.org/t/p/w500/{{top_rated_movie.poster_path}}" alt="">
         <li class="text-center">
-          {{ now_playing_movies.title|truncatechars:10}}
+          {{ top_rated_movie.title|truncatechars:10}}
       </li>
       
     </a>
@@ -46,9 +49,9 @@
 </div>
 
 <div class="container">
-  <h1>Top Rated TV shows</h1>
+  <h1 class="text-center" id= "category-title">Top Rated TV shows</h1>
   <div class="row">
-    <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 movie-card">
+    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-2 d-flex movie-card" id = "movie-cont">
     {% for top_rated in top_rated_tv %}  
    
     <div>
@@ -68,9 +71,9 @@
 <!-- upcoming_movies -->
 
 <div class="container">
-  <h1>Upcoming Movies</h1>
+  <h1 class="text-center" id= "category-title">Upcoming Movies</h1>
   <div class="row">
-    <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 movie-card">
+    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-2 d-flex movie-card" id = "movie-cont">
     {% for upcoming_movies in upcoming_movies %}   
    
     <div>
@@ -89,9 +92,9 @@
 
 <!-- popular_tv_shows -->
 <div class="container-fluid">
-  <h1>Must Watch Shows</h1>
+  <h1 class="text-center" id= "category-title">Must Watch</h1>
   <div class="row">
-    <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 movie-card">
+    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-2 d-flex movie-card" id = "movie-cont">
     {% for popular_tv_shows in popular_tv_shows %}
    
     <div>
