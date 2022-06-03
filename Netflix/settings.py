@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'videos',
     'home',
+    'bootstrap4',
 ]
 
 MIDDLEWARE = [
@@ -130,3 +131,4 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = '/videos'
+TMDB_API_KEY = 'cc18f777d14fa106c8ae56e947d06f3d'
