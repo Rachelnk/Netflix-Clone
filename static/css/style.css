@@ -1,0 +1,9 @@
+.navbar{
+    background-color: rgb(156, 10, 10);
+    height: 8rem;
+}
+.links a{
+    margin: 0rem 5rem;
+    border: none;
+
+}
