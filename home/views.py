@@ -15,15 +15,17 @@ class SignupView(CreateView):
 
     def get(self, request, *args, **kwargs):
         if self.request.user.is_authenticated:
-            return redirect('videos')
+            return redirect('videos_home')
         return super().get(request, *args, **kwargs)
 
 
 class LoginInterfaceView(LoginView):
     template_name: str = 'home/login.html'
+    success_url = '/videos_home'
 
 class LogoutInterfaceView(LogoutView):
     template_name: str = 'home/logout.html'
+    success_url = '/home'
 
 class HomeView(TemplateView):
     template_name = 'home/home.html'

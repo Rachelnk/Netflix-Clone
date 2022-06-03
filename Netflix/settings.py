@@ -38,14 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-<<<<<<< HEAD
     'videos',
     'home',
     'bootstrap4',
-=======
-    'bootstrap4',
-    'videos'
->>>>>>> trial
 ]
 
 MIDDLEWARE = [

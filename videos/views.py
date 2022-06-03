@@ -20,8 +20,8 @@ class VideosListView(LoginRequiredMixin, ListView):
 
 # Create your views here.
 
-def all_movies_tvshows(request):
-    return render(request, 'all-movies/home.html')
+# def all_movies_tvshows(request):
+#     return render(request, 'all-movies/videos_home.html')
 
 def view_all(request):
 
@@ -50,7 +50,7 @@ def view_all(request):
     upcoming_movie_results = upcoming_movie_request.json()
     upcoming_movies = upcoming_movie_results['results']
 
-    return render(request,'all-movies/home.html', {'now_playing_movies': now_playing_movies, 'top_rated_movie': top_rated_movie, 'top_rated_tv':top_rated_tv, 'upcoming_movies': upcoming_movies, 'popular_tv_shows':popular_tv_shows})
+    return render(request,'all-movies/videos_home.html', {'now_playing_movies': now_playing_movies, 'top_rated_movie': top_rated_movie, 'top_rated_tv':top_rated_tv, 'upcoming_movies': upcoming_movies, 'popular_tv_shows':popular_tv_shows})
 
 
     
