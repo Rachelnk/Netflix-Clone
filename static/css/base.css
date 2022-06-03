@@ -1,3 +1,21 @@
 .container-fluid{
-    background-image: url(../photos/NETFLIX.jpg);
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url(../photos/NETFLIX.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    
+}
+.netflix{
+    font-weight: bolder;
+    color:rgb(229,50,18);
+    padding-top: 25px;
+
+}
+button{
+    float: right;
+}
+.section1{
+    color: white;
+    margin: 0 auto;
+
 }
